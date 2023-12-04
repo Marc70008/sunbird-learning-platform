@@ -12,7 +12,7 @@
         method: "POST"
         body: "{{ lookup('file','../docs/domain_model_v2/definitions/{{ item }}.json') }}"
         body_format: "json"
-
+        headers: {"content_type": "application/json", "user-id":"system"}
       with_items:
         -  'content_definition'
         -  'content_image_definition'
